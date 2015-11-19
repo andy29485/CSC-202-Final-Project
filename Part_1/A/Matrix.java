@@ -1,6 +1,6 @@
-//Andriy Zasypkin
-//2015-11-14
-//Homework 08
+//Andriy Zasypkin and Jason Tufano
+//2015-11-19
+//Final Project part 1A
 
 public class Matrix {
   private double data[][];
@@ -12,6 +12,7 @@ public class Matrix {
     this.rows = 0;
     this.cols = 0;
   }
+  
   public Matrix(int rows, int cols) {
     this.data = new double[rows][cols];
     this.rows = rows;
@@ -30,6 +31,35 @@ public class Matrix {
   
   public int getColumns() {
     return this.cols;
+  }
+  
+  //return this array, but remove row r, and column c
+  private Matrix remove(int r, int c) {
+    Matrix A = new Matrix(this.rows-1, this.cols-1);
+    for(int i=0; i<this.rows-1; i++) {
+      for(int j=0; j<this.cols-1; j++) {
+        A.set(i, j, this.get(i<r ? i : i+1, j<c ? j : j+1));
+      }
+    }
+  }
+  
+  //return deturminant of this matrix
+  public double det() {
+    if(this.rows != this.cols)
+      throw new RuntimeException("Illegal matrix dimensions");
+    if(this.rows == 0)
+      return 1;
+    if(this.rows == 1)
+      return this.get(0, 0);
+    if(this.rows == 2)
+      return this.get(0, 0)*this.get(1, 1) - this.get(1, 0)*this.get(0, 1);
+    
+    double sum = 0;
+    for(int i=0; i<this.rows; i++) {
+      for(int j=0; j<this.cols; j++) {
+        sum += ((i+j)%2 == 0 ? 1 : -1) * this.get(i, j) * this.remove(i, j).det();
+      }
+    }  
   }
   
   public void set(int i, int j, double x) {
