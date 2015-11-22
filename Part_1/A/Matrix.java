@@ -50,24 +50,24 @@ public class Matrix {
   //return deturminant of this matrix
   public double det() {
     System.out.println("\nDet:");
-    double d = det(0, "", 1);
+    double d = det(0, "", 1, false);
     
-    System.out.printf("Det = %8.2f\n", d);
+    System.out.printf("  Det = %8.2f\n", d);
     return d;
   }
   
-  private double det(int indent, String prefix, double mult) {
+  private double det(int indent, String prefix, double mult, boolean threeXthree) {
     if(this.rows != this.cols)
       throw new RuntimeException("Illegal matrix dimensions");
     if(this.rows == 0) {
-      for(int i=0; i<indent; i++) {
+      for(int i=0; i<=indent; i++) {
         System.out.print("  ");
       }
       System.out.printf("det( [] ) = 1\n");
       return 1;
     }
     if(this.rows == 1) {
-      for(int i=0; i<indent; i++) {
+      for(int i=0; i<=indent; i++) {
         System.out.print("  ");
       }
       System.out.printf("det( [%8.2f] ) = %8.2f\n",
@@ -75,10 +75,17 @@ public class Matrix {
       return this.get(0, 0);
     }
     if(this.rows == 2) {
-      for(int i=0; i<indent; i++) {
+      for(int i=0; i<=indent; i++) {
         System.out.print("  ");
       }
-      System.out.printf("det( %c ) = %s((%8.2f * %8.2f) - (%8.2f * %8.2f)) = %8.2f\n", 
+      if(threeXthree)
+        System.out.printf("%s((%8.2f * %8.2f) - (%8.2f * %8.2f))",
+                 prefix,
+                 this.get(0, 0), this.get(1, 1),
+                 this.get(1, 0), this.get(0, 1),
+                 (this.get(0, 0)*this.get(1, 1)-this.get(1, 0)*this.get(0, 1))*mult);
+      else
+        System.out.printf("det( %c ) = %s((%8.2f * %8.2f) - (%8.2f * %8.2f)) = %8.2f\n",
                  indent+'A',
                  prefix,
                  this.get(0, 0), this.get(1, 1),
@@ -91,18 +98,27 @@ public class Matrix {
     for(int i=0; i<this.rows; i++) {
       double a = ((i)%2 == 0 ? 1 : -1);
       double b = this.get(i, 0);
-      for(int k=0; k<indent; k++) {
+      for(int k=0; k<=indent; k++) {
         System.out.print("  ");
       }
-      System.out.printf("%c[%02d][%02d] = %s(-1^(%d))*(%8.2f*det( %c )) = ?\n",
+      if(this.rows==3)
+        System.out.printf("%c[%02d][%02d] = %s(-1^(%d))*(%8.2f *",
                         indent+'A', i+1, 1, prefix,
                         i+2, b, indent+'B');
-      double c = this.remove(i, 0).det(indent+1, "", 1);
+      else
+        System.out.printf("%c[%02d][%02d] = %s(-1^(%d))*(%8.2f*det( %c )) = ?\n",
+                        indent+'A', i+1, 1, prefix,
+                        i+2, b, indent+'B');
+      double c = this.remove(i, 0).det(indent+1, "", 1, this.rows==3);
       for(int k=0; k<indent+1; k++) {
         System.out.print("  ");
       }
-      System.out.printf("? = %8.2f\n",
-                        a*b*c*mult);
+      if(this.rows==3)
+        System.out.printf(") = %8.2f\n",
+                          a*b*c*mult);
+      else
+        System.out.printf("? = %8.2f\n",
+                          a*b*c*mult);
       sum += a*b*c;
     }
     return sum;
@@ -140,7 +156,7 @@ public class Matrix {
         
         double d = this.remove(i, j).det(1,
                                          String.format("(-1^(%d))*", i+j+2),
-                                         (i+j)%2 == 0 ? 1 : -1);
+                                         (i+j)%2 == 0 ? 1 : -1, false);
         A.set(j, i, ((i+j)%2 == 0 ? 1 : -1) * d);
       }
     }
@@ -168,7 +184,7 @@ public class Matrix {
     Matrix A = new Matrix(this.rows, this.cols);
     for(int i=0; i<this.rows; i++) {
       for(int j=0; j<this.cols; j++) {
-        A.set(i, j, this.remove(i, j).det(1, "", 1));
+        A.set(i, j, this.remove(i, j).det(1, "", 1, false));
       }
     }
     return A;
