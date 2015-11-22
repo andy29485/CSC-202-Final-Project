@@ -41,6 +41,7 @@ public class Matrix {
         A.set(i, j, this.get(i<r ? i : i+1, j<c ? j : j+1));
       }
     }
+    return A;
   }
 
   //return deturminant of this matrix
@@ -56,9 +57,7 @@ public class Matrix {
 
     double sum = 0;
     for(int i=0; i<this.rows; i++) {
-      for(int j=0; j<this.cols; j++) {
-        sum += ((i+j)%2 == 0 ? 1 : -1) * this.get(i, j) * this.remove(i, j).det();
-      }
+      sum += ((i)%2 == 0 ? 1 : -1) * this.get(i, 0) * this.remove(i, 0).det();
     }
   }
 
@@ -130,7 +129,7 @@ public class Matrix {
     Matrix A = new Matrix(this.cols, this.rows);
     for(int i=0; i<this.rows; i++)
       for(int j=0; j<this.cols; j++)
-        A.set(j, i, this.get(i, j);
+        A.set(j, i, this.get(i, j));
     return A;
   }
 
@@ -148,13 +147,13 @@ public class Matrix {
   //multiply this by A(matrix)
   public Matrix multiply(Matrix A) {
     //After reading the problem statement I realized that this was unnecessary
-    if(this.rows != A.getColumns())
+    if(this.cols != A.getRows())
       throw new RuntimeException("Illegal matrix dimensions");
     Matrix B = new Matrix(this.rows, A.getColumns());
     for(int i=0; i<B.getRows(); i++)
       for(int j=0; j<B.getColumns(); j++)
         for(int k=0; k<this.cols; k++)
-          B.set(i, j, B.get(i, j) + this.get(i, k)*A.get(k, j));
+          B.set(i, j, B.get(i, j) + this.get(k, i)*A.get(k, j));
     return B;
   }
 
@@ -164,6 +163,20 @@ public class Matrix {
     for(int i=0; i<this.rows; i++)
       for(int j=0; j<this.cols; j++)
         A.set(i, j, this.get(i, j) * k);
+    return A;
+  }
+
+  //divide this by A(matrix)
+  public Matrix divide(Matrix A) {
+    return this.multiply(A.inverse());
+  }
+
+  //divide this by k(scalar)
+  public Matrix divide(double k) {
+    Matrix A = new Matrix(this.rows, this.cols);
+    for(int i=0; i<this.rows; i++)
+      for(int j=0; j<this.cols; j++)
+        A.set(i, j, this.get(i, j) / k);
     return A;
   }
 

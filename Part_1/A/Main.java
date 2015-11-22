@@ -10,7 +10,10 @@
   */
 
 public class Main {
-  public static void main(String[] args) {
+  public static void main(String[] args) throws IOException {
+    //create an input reader object
+    BufferedReader input
+            = new BufferedReader(new InputStreamReader(System.in));
     
     System.exit(0);
   }
