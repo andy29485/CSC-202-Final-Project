@@ -25,7 +25,7 @@ public class Robot {
         this.currentStation.getName());
     else
       System.out.printf("Retrieved item from %s: {id:%d, temp:%f, mass:%f}\n",
-        this.currentStation.getName(),//TODO
+        this.currentStation.getName(),
         this.item.getID(),
         this.item.getTemp(),
         this.item.getMass());
@@ -45,7 +45,7 @@ public class Robot {
     }
     if(this.currentStation.addItem(this.item)) {
       System.out.printf("%s: placed item: {id:%d, temp:%f, mass:%f}\n",
-        this.currentStation.getName(),//TODO
+        this.currentStation.getName(),
         this.item.getID(),
         this.item.getTemp(),
         this.item.getMass());
