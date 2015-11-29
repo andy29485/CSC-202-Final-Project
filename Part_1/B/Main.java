@@ -32,16 +32,26 @@
   *       the unload station  will be labeled -2
   *   - The "nearest station" will be interpretted as the lowest number station
   *   - The priority goes refrigeration-->weight-->left/right side
+  *   - Because 5 and 7 have special purposes, they will not be used to store
+  *       ordinary items
+  *   - Station 8 will be used for unloading non-refrigerated items
   *   - Serial numbers marked with an MSB of 5 indicates refrigeration, serial
   *   	  numbers marked with an MSB of 7 indicates a weight lower than 80kg.
   *   - Temperature is measured in fahrenheit - as doubles
   *   - Robot can only hold 1 item at a time
+  *   - Station 8, not sure what it is, but it was on the diagram
+  *       see next assumption
+  *   - If stations are full(in said row)
+  *       dump into station 8
+  *       !except station 5! - that goes to Refrigeration Container
   *   - Directions:
   *     - Backward: to pickup station
   *     - Forward:  to refrigeration container
   *     - Left:     to odd stations
-  *     - Right:    tp even stations
-  *   - Movement: stations are 1 move appart
+  *     - Right:    to even stations
+  *   - Movement: characters are 1 space appart, to be in a station the
+  *                 robot must be on said number
+  *               see diagarm:
   *     ---------
   *     | 6420  |
   *     |R     P|
@@ -61,7 +71,7 @@ public class Main {
     String item_info;
 
     while((item_info = input.readLine()) != null) { //TODO IDK
-      Item item = new Item;
+      Item item = new Item();
       //TODO use item's mutator methods to set values from input
       storeRoom.addItem(item);
     }

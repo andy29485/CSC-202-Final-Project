@@ -90,6 +90,7 @@ public class ItemList {
       tmp = prev.getNext();
       prev.setNext(prev.getNext().getNext());
     }
+    tmp.setNext(null);
     return tmp;
   }
 
