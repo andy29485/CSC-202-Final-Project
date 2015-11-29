@@ -24,6 +24,9 @@
   *
   * Assumptions:
   *   - The robot does not need to turn
+  *   - The movement will be virtual, and shall be printed
+  *   - Picking and placing items shall be printed
+  *   - The refrigeration container will be refferd to as the unload station
   *   - The 8 normal stations will be labeled 1-8,
   *       the pickup station  will be labeled 0
   *       the unload station  will be labeled 9
