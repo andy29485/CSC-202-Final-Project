@@ -40,7 +40,7 @@
   *     - Backward: to pickup station
   *     - Forward:  to refrigeration container
   *     - Left:     to odd stations
-  *     - Right:    tp even stations
+  *     - Right:    to even stations
   *   - Movement: stations are 1 move appart
   *     ---------
   *     | 6420  |
