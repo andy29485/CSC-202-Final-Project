@@ -19,16 +19,42 @@ public class Robot {
     if(this.currentStation == null || this.item != null) {
       return false;
     }
-    return (this.item = this.currentStation.getItem()) != null;
+    this.item = this.currentStation.getItem();
+    if(this.item == null)
+      System.out.printf("Unable to retrieve item from %s\n",
+        this.currentStation.getName());
+    else
+      System.out.printf("Retrieved item from %s: {id:%d, temp:%f, mass:%f}\n",
+        this.currentStation.getName(),
+        this.item.getID(),
+        this.item.getTemp(),
+        this.item.getMass());
+    return this.item != null;
   }
 
   public boolean putItem() {
     if(this.currentStation == null || this.item == null) {
+      System.out.printf("%s: unable to palce item\n",
+        this.currentStation.getName());
       return false;
     }
     if(currentStation.maxedOut()) {
+      System.out.printf("%s: unable to palce item\n",
+        this.currentStation.getName());
       return false;
     }
+    if(this.currentStation.addItem(this.item)) {
+      System.out.printf("%s: placed item: {id:%d, temp:%f, mass:%f}\n",
+        this.currentStation.getName(),
+        this.item.getID(),
+        this.item.getTemp(),
+        this.item.getMass());
+      this.item = null;
+      return true;
+    }
+    System.out.printf("%s: unable to palce item\n",
+      this.currentStation.getName());
+    return false;
   }
 
   public Item getItem() {

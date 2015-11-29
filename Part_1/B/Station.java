@@ -5,10 +5,12 @@
 public class Station {
   private ItemList  items;
   private int       limit;
+  private String    name;
 
   public Station() {
     this.items = new ItemList();
     this.limit = 8;
+    this.name  = "";
   }
 
   public boolean addItem(Item item) {
@@ -36,5 +38,13 @@ public class Station {
 
   public int getLimit() {
     return this.limit;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public String getName() {
+    return this.name;
   }
 }

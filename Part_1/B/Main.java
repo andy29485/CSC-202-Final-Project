@@ -24,15 +24,29 @@
   *
   * Assumptions:
   *   - The robot does not need to turn
-  *   - The 8 normal stations will be labeled 1-8,
-  *       the pickup station  will be labeled 0
-  *       the unload station  will be labeled 9
+  *   - The movement will be virtual, and shall be printed
+  *   - Picking and placing items shall be printed
+  *   - The refrigeration container will be refferd to as the unload station
+  *   - The 8 normal stations will be labeled 0-8,
+  *       the pickup station  will be labeled -1
+  *       the unload station  will be labeled -2
   *   - The "nearest station" will be interpretted as the lowest number station
   *   - The priority goes refrigeration-->weight-->left/right side
   *   - Serial numbers marked with an MSB of 5 indicates refrigeration, serial
   *   	  numbers marked with an MSB of 7 indicates a weight lower than 80kg.
   *   - Temperature is measured in fahrenheit - as doubles
   *   - Robot can only hold 1 item at a time
+  *   - Directions:
+  *     - Backward: to pickup station
+  *     - Forward:  to refrigeration container
+  *     - Left:     to odd stations
+  *     - Right:    tp even stations
+  *   - Movement: stations are 1 move appart
+  *     ---------
+  *     | 6420  |
+  *     |R     P|
+  *     | 75318 |
+  *     ---------
   */
 
 import java.io.*;
