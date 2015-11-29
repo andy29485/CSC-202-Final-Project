@@ -39,12 +39,19 @@
   *   	  numbers marked with an MSB of 7 indicates a weight lower than 80kg.
   *   - Temperature is measured in fahrenheit - as doubles
   *   - Robot can only hold 1 item at a time
+  *   - Station 8, not sure what it is, but it was on the diagram
+  *       see next assumption
+  *   - If stations are full(in said row)
+  *       dump into station 8
+  *       !except station 5! - that goes to Refrigeration Container
   *   - Directions:
   *     - Backward: to pickup station
   *     - Forward:  to refrigeration container
   *     - Left:     to odd stations
   *     - Right:    to even stations
-  *   - Movement: stations are 1 move appart
+  *   - Movement: characters are 1 space appart, to be in a station the
+  *                 robot must be on said number
+  *               see diagarm:
   *     ---------
   *     | 6420  |
   *     |R     P|
