@@ -24,9 +24,9 @@
   *
   * Assumptions:
   *   - The robot does not need to turn
-  *   - The 8 stations will be labeled 1-8,
-  *       the pickup station will be labeled 0
-  *       the unload station will be labeled 9
+  *   - The 8 normal stations will be labeled 1-8,
+  *       the pickup station  will be labeled 0
+  *       the unload station  will be labeled 9
   *   - The "nearest station" will be interpretted as the lowest number station
   *   - The priority goes refrigeration-->weight-->left/right side
   *   - Serial numbers marked with an MSB of 5 indicates refrigeration, serial
