@@ -3,7 +3,9 @@
 //Final Project part 1B
 
 public class Robot {
+  private ItemList items;
+  
   public Robot() {
-    
+    items = new ItemList();
   }
 }
