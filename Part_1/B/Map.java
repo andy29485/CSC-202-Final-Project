@@ -77,9 +77,13 @@ public class Map {
 
   //Sends unload message to robot
   public void unload() {
+    this.unload(5);//default unload station is 5
+  }
+
+  public void unload(int station) {
     System.out.println("Unloading");
     if(robot.getItem() == null) {
-      robot.moveToStation(this.stations[5]);
+      robot.moveToStation(this.stations[station]);
       robot.pickItem();
     }
     while(robot.getItem() != null) {
