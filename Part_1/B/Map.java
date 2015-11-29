@@ -81,6 +81,9 @@ public class Map {
   }
 
   public void unload(int station) {
+    if(station < -1 || station >= this.stations.length)
+      throw new ArrayIndexOutOfBoundsException(
+        String.format("valid stations [-1, %d]",this.stations.length-1));
     System.out.println("Unloading");
     if(robot.getItem() == null) {
       robot.moveToStation(this.stations[station]);
@@ -90,7 +93,10 @@ public class Map {
       robot.moveToStation(this.unload);//move to unload station
       if(!robot.putItem())
         throw new RuntimeException("robot could not unload item");
-      robot.moveToStation(this.stations[station]);
+      if(station == -1)
+        robot.moveToStation(this.pickup);
+      else
+        robot.moveToStation(this.stations[station]);
       robot.pickItem();
     }
     System.out.println("Done Unloading");
