@@ -81,26 +81,46 @@ public class Map {
 
   //Sends unload message to robot
   public void unload() {
-    this.unload(5);//default unload station is 5
+    this.unload(5, -2);//default unload station is 5
   }
 
   public void unload(int station) {
-    if(station < -1 || station >= this.stations.length)
-      throw new ArrayIndexOutOfBoundsException(
-        String.format("valid stations [-1, %d]",this.stations.length-1));
+    this.unload(station, -2);//default unload station is 5
+  }
+
+  public void unload(int from, int to) {
+    if(from < -2 || from >= this.stations.length
+      || to < -2 || to >= this.stations.length)
+        throw new ArrayIndexOutOfBoundsException(
+          String.format("valid stations [-2, %d]",this.stations.length-1));
+    if(from == to)
     System.out.println("Unloading");
     if(robot.getItem() == null) {
-      robot.moveToStation(this.stations[station]);
+      robot.moveToStation(this.stations[from]);
       robot.pickItem();
     }
     while(robot.getItem() != null) {
-      robot.moveToStation(this.unload);//move to unload station
-      if(!robot.putItem())
-        throw new RuntimeException("robot could not unload item");
-      if(station == -1)
+      //move to unload station
+      if(to == -2)
+        robot.moveToStation(this.unload);
+      else if(to == -1)
         robot.moveToStation(this.pickup);
       else
-        robot.moveToStation(this.stations[station]);
+        robot.moveToStation(this.stations[to]);
+
+      //unload the item
+      if(!robot.putItem())
+        throw new RuntimeException("robot could not unload item");
+
+      //move to station to unlaod(pick) form
+      if(from == -2)
+        robot.moveToStation(this.unload);
+      else if(from == -1)
+        robot.moveToStation(this.pickup);
+      else
+        robot.moveToStation(this.stations[from]);
+
+      //Pick up an item from said station
       robot.pickItem();
     }
     System.out.println("Done Unloading");
