@@ -64,7 +64,39 @@ public class Map {
       int     item_id     = robot.getItem().getID();
       double  item_temp   = robot.getItem().getTemp();
       double  item_mass   = robot.getItem().getMass();
-      //TODO figure out which station to go to
+      if(item_id >= 50000 && item_id < 60000){
+    	  if(!stations[5].maxedOut())
+    		  station_num = 5;
+    	  else{
+    		  robot.unload(5, -2);    	  }
+      }
+      else if(item_id >= 70000 && item_id < 80000){
+    	  if(!stations[7].maxedOut())
+    		  station_num = 7;
+    	  else
+    		  robot.unload(7, 8)
+      }
+      else if(item_id%2 == 0){
+    	  if(stations[6].maxedOut())
+    		  robot.unload(6,8);
+    	  else{
+    		  for(int i=6; i>=0; i-=2){
+    			  if(!stations[i].maxedOut())
+    				  station_num = i;
+    		  }
+    	  }  
+      }
+      else{
+    	  if(stations[3].maxedOut())
+    		  robot.unload(3,8);
+    	  else{
+    		  for(int i=3; i>=1; i-=2){
+    			  if(!stations[i].maxedOut())
+    				  station_num = i;
+    		  }
+    	  }
+      }
+    }
 
       //Go to station
       robot.moveToStation(this.station[station_num]);

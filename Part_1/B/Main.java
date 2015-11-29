@@ -32,6 +32,9 @@
   *       the unload station  will be labeled -2
   *   - The "nearest station" will be interpretted as the lowest number station
   *   - The priority goes refrigeration-->weight-->left/right side
+  *   - Because 5 and 7 have special purposes, they will not be used to store
+  *       ordinary items
+  *   - Station 8 will be used for unloading non-refrigerated items
   *   - Serial numbers marked with an MSB of 5 indicates refrigeration, serial
   *   	  numbers marked with an MSB of 7 indicates a weight lower than 80kg.
   *   - Temperature is measured in fahrenheit - as doubles
