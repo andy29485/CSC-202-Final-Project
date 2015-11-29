@@ -41,6 +41,12 @@ public class Map {
 
   //Sends unload message to robot
   public void unload() {
-    //TODO unload
+    //TODO - should I pick stuff up first?
+    while(robot.getItem() != null) {
+      robot.moveToStation(this.stations[NUM_STATIONS-1]);
+      if(!robot.putItem())
+        throw new RuntimeException("robot could not unload item");
+      //TODO maybe pickup more items here
+    }
   }
 }
