@@ -28,6 +28,8 @@ public class Map {
   }
 
   //Main part(so to speak) - will be looped in actual main
+  //This comment reffers to canStart(step 1-2)
+  //                     and start(steps 3-6)
   //robot should:
   //  1) go to pickup station - if not there
   //  2) pick up item
@@ -35,18 +37,20 @@ public class Map {
   //  4) go to that station
   //  5) place item
   //     - if item was not placed, pick a new station and go to step #4
-  //  6) return to pickup station? - not sure if this is needed
-  //
-  //will return false when no items left in pickup station
-  public boolean start() {
+  //  6) return to pickup station
+
+  public boolean canStart() {
     //Go to station if not there
     if(robot.getStation() != this.pickup)
       robot.moveToStation(this.pickup);
 
+    //will return false when no items left in pickup station
+    //true if the robot picked up an item
     //Can't do much is robot does not have an item
-    if(!robot.pickItem() && robot.getItem() == null)
-      return false;
+    return robot.getItem() != null || robot.pickItem();
+  }
 
+  public void start() {
     //Place holder
     //  note: this will be the station id that the robot goes to
     //        with the default # of station this should be in range [0-8]
@@ -102,7 +106,6 @@ public class Map {
     //Go the the pickup station, this is the robot's 'base'
     //  this way, at the end of the day the robot is in his 'base'
     robot.moveToStation(this.pickup);
-    return true;
   }
 
   //Adds item to pickup 'station'
