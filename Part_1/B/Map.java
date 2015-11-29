@@ -29,8 +29,37 @@ public class Map {
   //  5) place item
   //     - if item was not placed, pick a new station and go to step #4
   //  6) return to pickup station? - not sure if this is needed
-  public void start() {
-    //TODO start tasks
+  public boolean start() {
+    //Go to station if not there
+    if(robot.getStation() != this.stations[0])
+      robot.moveToStation(this.stations[0]);
+
+    //Can't do much is robot does not have an item
+    if(!robot.pickItem() && robot.getItem() == null)
+      return false;
+
+    //Place holder
+    //  note: this will be the station id that the robot goes to
+    //        with the default # of station this should be in range [1-8]
+    //  note: in the loop - if this value is not -1, that means that the
+    //        number that is currently being stored, is the id of a station
+    //        in which the robot COULD NOT place an item in, therefore the
+    //        robot should chose a DIFFENT number station
+    int station_num = -1;
+
+    do {
+      int     item_id     = robot.getItem().getID();
+      double  item_temp   = robot.getItem().getTemp();
+      double  item_mass   = robot.getItem().getMass();
+      //TODO figure out which station to go to
+
+      //Go to station
+      robot.moveToStation(this.station[station_num]);
+    } while(!robot.putItem());
+
+    //Go the the pickup station, this is the robot's 'base'
+    //  this way, at the end of the day the robot is in his 'base'
+    robot.moveToStation(this.stations[0]);
   }
 
   //Adds item to pickup 'station'
