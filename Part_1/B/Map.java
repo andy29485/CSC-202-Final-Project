@@ -70,6 +70,7 @@ public class Map {
 
   //Sends unload message to robot
   public void unload() {
+    System.out.println("Unloading");
     if(robot.getItem() == null) {
       robot.moveToStation(this.stations[5]);
       robot.pickItem();
@@ -81,5 +82,6 @@ public class Map {
       robot.moveToStation(this.stations[5]);
       robot.pickItem();
     }
+    System.out.println("Done Unloading");
   }
 }
