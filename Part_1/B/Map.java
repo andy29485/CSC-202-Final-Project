@@ -5,32 +5,26 @@
 public class Map {
   private Robot            robot;
   private Station          stations[];
-  private static final int NUM_STATIONS = 10; //should be 2+actual number
+  private Station          pickup;
+  private Station          unload;
+  private static final int NUM_STATIONS = 9; //should be 1+actual number
+                                             //  this way station 0 is included
   public Map() {
     this.stations = new Station[NUM_STATIONS];
-    this.robot    = new Robot(this.stations[0]); //Robot starts at pickup
-    this.stations[0].setLimit(-1);
-    this.stations[NUM_STATIONS-1].setLimit(-1);
+    this.robot    = new Robot(this.pickup); //Robot starts at pickup
+    this.pickup   = new Station();
+    this.unload   = new Station();
+
+    this.pickup.setLimit(-1);
+    this.unload.setLimit(-1);
+    this.stations[8].setLimit(-1);
 
     //set station names
-    this.stations[0].setName("Pickup");
-    this.stations[0].setName("Refrigeration Container");
-    for(int i=1; i<NUM_STATIONS-1; i++) {
-      this.stations[i].setName(String.format("Station %02d", i);
+    this.pickup.setName("Pickup");
+    this.unload.setName("Refrigeration Container");
+    for(int i=0; i<NUM_STATIONS; i++) {
+      this.stations[i].setName(String.format("Station %02d", i));
     }
-  }
-
-  public Map(Robot robot) {
-    this.robot    = robot;
-    this.stations = new Station[NUM_STATIONS];
-    this.stations[0].setLimit(-1);
-    this.stations[NUM_STATIONS-1].setLimit(-1);
-
-    //set station names
-    this.stations[0].setName("Pickup");
-    this.stations[0].setName("Refrigeration Container");
-    for(int i=1; i<NUM_STATIONS-1; i++) {
-      this.stations[i].setName(String.format("Station %02d", i);
   }
 
   //Main part(so to speak) - will be looped in actual main
@@ -42,10 +36,12 @@ public class Map {
   //  5) place item
   //     - if item was not placed, pick a new station and go to step #4
   //  6) return to pickup station? - not sure if this is needed
+  //
+  //will return false when no items left in pickup station
   public boolean start() {
     //Go to station if not there
-    if(robot.getStation() != this.stations[0])
-      robot.moveToStation(this.stations[0]);
+    if(robot.getStation() != this.pickup)
+      robot.moveToStation(this.pickup);
 
     //Can't do much is robot does not have an item
     if(!robot.pickItem() && robot.getItem() == null)
@@ -99,32 +95,63 @@ public class Map {
     }
 
       //Go to station
-      robot.moveToStation(this.station[station_num]);
+      robot.moveToStation(this.stations[station_num]);
     } while(!robot.putItem());
 
     //Go the the pickup station, this is the robot's 'base'
     //  this way, at the end of the day the robot is in his 'base'
-    robot.moveToStation(this.stations[0]);
+    robot.moveToStation(this.pickup);
+    return true;
   }
 
   //Adds item to pickup 'station'
   public void addItem(Item item) {
-    if(!this.stations[0].addItem(item))
+    if(!this.pickup.addItem(item))
       throw new RuntimeException("pickup does not want to accept more items");
   }
 
   //Sends unload message to robot
   public void unload() {
+    this.unload(5, -2);//default unload station is 5
+  }
+
+  public void unload(int station) {
+    this.unload(station, -2);//default unload station is 5
+  }
+
+  public void unload(int from, int to) {
+    if(from < -2 || from >= this.stations.length
+      || to < -2 || to >= this.stations.length)
+        throw new ArrayIndexOutOfBoundsException(
+          String.format("valid stations [-2, %d]",this.stations.length-1));
+    if(from == to)
     System.out.println("Unloading");
     if(robot.getItem() == null) {
-      robot.moveToStation(this.stations[5]);
+      robot.moveToStation(this.stations[from]);
       robot.pickItem();
     }
     while(robot.getItem() != null) {
-      robot.moveToStation(this.stations[NUM_STATIONS-1]);//move to unload station
+      //move to unload station
+      if(to == -2)
+        robot.moveToStation(this.unload);
+      else if(to == -1)
+        robot.moveToStation(this.pickup);
+      else
+        robot.moveToStation(this.stations[to]);
+
+      //unload the item
       if(!robot.putItem())
         throw new RuntimeException("robot could not unload item");
-      robot.moveToStation(this.stations[5]);
+
+      //move to station to unlaod(pick) form
+      if(from == -2)
+        robot.moveToStation(this.unload);
+      else if(from == -1)
+        robot.moveToStation(this.pickup);
+      else
+        robot.moveToStation(this.stations[from]);
+
+      //Pick up an item from said station
       robot.pickItem();
     }
     System.out.println("Done Unloading");
