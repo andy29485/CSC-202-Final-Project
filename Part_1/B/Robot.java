@@ -11,6 +11,11 @@ public class Robot {
     this.currentStation = null;
   }
 
+  public Robot(Station station) {
+    this.item           = null;
+    this.currentStation = station;
+  }
+
   //This method would have been only one line long if not
   //  for the moving/printing the movements part
   public void moveToStation(Station station) {
@@ -120,5 +125,9 @@ public class Robot {
 
   public Item getItem() {
     return this.item;
+  }
+
+  public Station getStation() {
+    return this.currentStation;
   }
 }

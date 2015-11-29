@@ -22,7 +22,7 @@ public class Map {
     this.pickup.setName("Pickup");
     this.unload.setName("Refrigeration Container");
     for(int i=0; i<NUM_STATIONS; i++) {
-      this.stations[i].setName(String.format("Station %02d", i);
+      this.stations[i].setName(String.format("Station %02d", i));
     }
   }
 
@@ -61,7 +61,7 @@ public class Map {
       //  and set station_num to that number(range [0-8])
 
       //Go to station
-      robot.moveToStation(this.station[station_num]);
+      robot.moveToStation(this.stations[station_num]);
     } while(!robot.putItem());
 
     //Go the the pickup station, this is the robot's 'base'
