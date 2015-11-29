@@ -17,6 +17,7 @@ public class Map {
 
     this.pickup.setLimit(-1);
     this.unload.setLimit(-1);
+    this.stations[8].setLimit(-1);
 
     //set station names
     this.pickup.setName("Pickup");
