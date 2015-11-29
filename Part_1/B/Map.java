@@ -3,17 +3,21 @@
 //Final Project part 1B
 
 public class Map {
-  private Robot   robot;
-  private Station stations[];
-
+  private Robot            robot;
+  private Station          stations[];
+  private static final int NUM_STATIONS = 10; //should be 2+actual number
   public Map() {
     this.robot    = new Robot();
-    this.stations = new Station[10];
+    this.stations = new Station[NUM_STATIONS];
+    this.stations[0].setLimit(-1);
+    this.stations[NUM_STATIONS-1].setLimit(-1);
   }
 
   public Map(Robot robot) {
     this.robot    = robot;
-    this.stations = new Station[10];
+    this.stations = new Station[NUM_STATIONS];
+    this.stations[0].setLimit(-1);
+    this.stations[NUM_STATIONS-1].setLimit(-1);
   }
 
   //Main part(so to speak) - will be looped in actual main
