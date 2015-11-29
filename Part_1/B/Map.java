@@ -53,7 +53,7 @@ public class Map {
 
     //Place holder
     //  note: this will be the station id that the robot goes to
-    //        with the default # of station this should be in range [1-8]
+    //        with the default # of station this should be in range [0-8]
     //  note: in the loop - if this value is not -1, that means that the
     //        number that is currently being stored, is the id of a station
     //        in which the robot COULD NOT place an item in, therefore the
