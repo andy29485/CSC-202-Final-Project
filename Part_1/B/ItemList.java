@@ -5,18 +5,18 @@
 public class ItemList {
   private Item head;
   private Item tail;
-  
+
   public ItemList() {
-    head = null;
-    tail = null;
+    this.head = null;
+    this.tail = null;
   }
-  
+
   public Item get(int index) {
     if(head == null)
       throw new RuntimeException("no elements in list");
     if(index < 0)
       throw new RuntimeException("index can't be negative");
-    
+
     Item item = head;
     for(int i=0; i<index; i++) {
       if(item.getNext() == null)
@@ -25,7 +25,7 @@ public class ItemList {
     }
     return item;
   }
-  
+
   public int size() {
     if(head == null)
       return 0;
@@ -34,7 +34,7 @@ public class ItemList {
     while((item = item.getNext()) != null) length++;
     return length;
   }
-  
+
   public Item append(Item item) {
     if(tail == null)
       head = item;
@@ -42,21 +42,21 @@ public class ItemList {
       tail.setNext(item);
     return tail = item;
   }
-  
+
   public Item append() {
     return this.append(new Item());
   }
-  
+
   public Item insert(int pos, Item item) {
     Item old;
-    
+
     if((pos == 0 && head == null) || pos == this.size())
       return this.append(item);
     else if(pos == 0)
       old = head;
     else
       old = this.get(pos-1);
-    
+
     if(pos == 0) {
       item.setNext(old);
       head = item;
@@ -67,17 +67,17 @@ public class ItemList {
     }
     return item;
   }
-  
+
   public Item insert(int pos) {
     return this.insert(pos, new Item());
   }
-  
+
   public Item remove(int index) {
     if(index >= this.size())
       throw new RuntimeException("no such index: "+index);
     if(index < 0)
       throw new RuntimeException("index can't be negative");
-    
+
     Item tmp;
     if(index == 0) {
       tmp = head;
@@ -92,7 +92,7 @@ public class ItemList {
     }
     return tmp;
   }
-  
+
   //not actually pop, just remove and return head item
   public Item pop() {
     return this.remove(0);
