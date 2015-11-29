@@ -58,6 +58,7 @@ public class Map {
       double  item_temp   = robot.getItem().getTemp();
       double  item_mass   = robot.getItem().getMass();
       //TODO figure out which station to go to
+      //  and set station_num to that number(range [0-8])
 
       //Go to station
       robot.moveToStation(this.station[station_num]);
