@@ -35,10 +35,30 @@
   *   - Robot can only hold 1 item at a time
   */
 
+import java.io.*;
+
 public class Main {
-  public static void main(String[] args) {
-    Map map = new Map();
-    
+  public static void main(String[] args) throws IOException {
+    //Create a map in which the robot and the stations are located
+    Map storeRoom = new Map();
+    //create an input reader object
+    BufferedReader input
+            = new BufferedReader(new InputStreamReader(System.in));
+    String item_info;
+
+    while((item_info = input.readLine()) != null) { //TODO IDK
+      Item item = new Item;
+      //TODO use item's mutator methods to set values from input
+      storeRoom.addItem(item);
+    }
+
+    while(true) { //TODO fix this condition
+      storeRoom.start();
+      //TODO figure out how unload works into this
+    }
+
+    //close stream
+    input.close();
     System.exit(0);
   }
 }
