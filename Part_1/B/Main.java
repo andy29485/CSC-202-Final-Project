@@ -32,6 +32,7 @@
   *   - Serial numbers marked with an MSB of 5 indicates refrigeration, serial
   *   	  numbers marked with an MSB of 7 indicates a weight lower than 80kg.
   *   - Temperature is measured in fahrenheit - as doubles
+  *   - Robot can only hold 1 item at a time
   */
 
 public class Main {
