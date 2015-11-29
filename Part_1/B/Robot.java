@@ -89,11 +89,9 @@ public class Robot {
       System.out.printf("Unable to retrieve item from %s\n",
         this.currentStation.getName());
     else
-      System.out.printf("Retrieved item from %s: {id:%d, temp:%f, mass:%f}\n",
+      System.out.printf("Retrieved item from %s: {id:%d}\n",
         this.currentStation.getName(),
-        this.item.getID(),
-        this.item.getTemp(),
-        this.item.getMass());
+        this.item.getID());
     return this.item != null;
   }
 
@@ -109,11 +107,9 @@ public class Robot {
       return false;
     }
     if(this.currentStation.addItem(this.item)) {
-      System.out.printf("%s: placed item: {id:%d, temp:%f, mass:%f}\n",
+      System.out.printf("%s: placed item: {id:%d}\n",
         this.currentStation.getName(),
-        this.item.getID(),
-        this.item.getTemp(),
-        this.item.getMass());
+        this.item.getID());
       this.item = null;
       return true;
     }
