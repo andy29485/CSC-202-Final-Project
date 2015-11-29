@@ -36,6 +36,8 @@ public class Map {
   //  5) place item
   //     - if item was not placed, pick a new station and go to step #4
   //  6) return to pickup station? - not sure if this is needed
+  //
+  //will return false when no items left in pickup station
   public boolean start() {
     //Go to station if not there
     if(robot.getStation() != this.pickup)
@@ -68,6 +70,7 @@ public class Map {
     //Go the the pickup station, this is the robot's 'base'
     //  this way, at the end of the day the robot is in his 'base'
     robot.moveToStation(this.pickup);
+    return true;
   }
 
   //Adds item to pickup 'station'
