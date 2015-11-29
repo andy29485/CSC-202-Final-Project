@@ -35,7 +35,8 @@ public class Map {
 
   //Adds item to pickup 'station'
   public void addItem(Item item) {
-    //TODO add items
+    if(!this.stations[0].addItem(item))
+      throw new RuntimeException("pickup does not want to accept more items");
   }
 
   //Sends unload message to robot
