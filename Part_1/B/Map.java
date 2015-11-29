@@ -7,8 +7,8 @@ public class Map {
   private Station          stations[];
   private static final int NUM_STATIONS = 10; //should be 2+actual number
   public Map() {
-    this.robot    = new Robot();
     this.stations = new Station[NUM_STATIONS];
+    this.robot    = new Robot(this.stations[0]); //Robot starts at pickup
     this.stations[0].setLimit(-1);
     this.stations[NUM_STATIONS-1].setLimit(-1);
 
