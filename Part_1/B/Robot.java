@@ -29,6 +29,11 @@ public class Robot {
     if(currentStation.maxedOut()) {
       return false;
     }
+    if(this.currentStation.addItem(this.item)) {
+      this.item = null;
+      return true;
+    }
+    return false;
   }
 
   public Item getItem() {
