@@ -64,7 +64,7 @@ public class Main {
     String item_info;
 
     while((item_info = input.readLine()) != null) { //TODO IDK
-      Item item = new Item;
+      Item item = new Item();
       //TODO use item's mutator methods to set values from input
       storeRoom.addItem(item);
     }
