@@ -63,25 +63,25 @@ import java.io.*;
 
 public class Main {
   public static void main(String[] args) throws IOException {
-    //Create a map in which the robot and the stations are located
+    //Creates a map in which the robot and the stations are located
     Map storeRoom = new Map();
-    //create an input reader object
+    //Creates an input reader object
     BufferedReader input
             = new BufferedReader(new InputStreamReader(System.in));
     String item_info;
 
-    while((item_info = input.readLine()) != null) { //TODO IDK
+    while((item_info = input.readLine()) != null) {
       Item item = new Item();
-      //TODO use item's mutator methods to set values from input
+      item.setID(Integer.valueOf(item_info));
       storeRoom.addItem(item);
     }
 
-    while(true) { //TODO fix this condition
+    while(storeRoom.canStart()) {
       storeRoom.start();
       //TODO figure out how unload works into this
     }
 
-    //close stream
+    //Closes stream
     input.close();
     System.exit(0);
   }
