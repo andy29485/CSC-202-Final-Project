@@ -11,6 +11,13 @@ public class Map {
     this.stations = new Station[NUM_STATIONS];
     this.stations[0].setLimit(-1);
     this.stations[NUM_STATIONS-1].setLimit(-1);
+
+    //set station names
+    this.stations[0].setName("Pickup");
+    this.stations[0].setName("Refrigeration Container");
+    for(int i=1; i<NUM_STATIONS-1; i++) {
+      this.stations[i].setName(String.format("Station %02d", i);
+    }
   }
 
   public Map(Robot robot) {
@@ -18,6 +25,12 @@ public class Map {
     this.stations = new Station[NUM_STATIONS];
     this.stations[0].setLimit(-1);
     this.stations[NUM_STATIONS-1].setLimit(-1);
+
+    //set station names
+    this.stations[0].setName("Pickup");
+    this.stations[0].setName("Refrigeration Container");
+    for(int i=1; i<NUM_STATIONS-1; i++) {
+      this.stations[i].setName(String.format("Station %02d", i);
   }
 
   //Main part(so to speak) - will be looped in actual main
