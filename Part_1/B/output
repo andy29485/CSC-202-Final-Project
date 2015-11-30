@@ -1,0 +1,422 @@
+Retrieved item from Pickup: {id:00000}
+
+How many items until unload: Robot moving Forward
+Robot moving Right
+Station 00: placed item: {id:00000}
+Robot moving Left
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Retrieved item from Pickup: {id:00001}
+Robot moving Forward
+Robot moving Right
+Station 00: placed item: {id:00001}
+Robot moving Left
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Retrieved item from Pickup: {id:50000}
+Robot moving Forward
+Robot moving Forward
+Robot moving Left
+Station 01: placed item: {id:50000}
+Robot moving Right
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Retrieved item from Pickup: {id:70000}
+Robot moving Forward
+Robot moving Forward
+Robot moving Forward
+Robot moving Forward
+Robot moving Forward
+Robot moving Forward
+Robot moving Left
+Station 05: placed item: {id:70000}
+Robot moving Right
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Retrieved item from Pickup: {id:79999}
+Robot moving Forward
+Robot moving Forward
+Robot moving Forward
+Robot moving Forward
+Robot moving Forward
+Robot moving Forward
+Robot moving Left
+Station 05: placed item: {id:79999}
+Robot moving Right
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Retrieved item from Pickup: {id:59999}
+Robot moving Forward
+Robot moving Forward
+Robot moving Forward
+Robot moving Forward
+Robot moving Forward
+Robot moving Forward
+Robot moving Forward
+Robot moving Forward
+Robot moving Left
+Station 07: placed item: {id:59999}
+Robot moving Right
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Retrieved item from Pickup: {id:75000}
+Robot moving Forward
+Robot moving Forward
+Robot moving Forward
+Robot moving Forward
+Robot moving Forward
+Robot moving Forward
+Robot moving Left
+Station 05: placed item: {id:75000}
+Robot moving Right
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Retrieved item from Pickup: {id:55000}
+Robot moving Forward
+Robot moving Forward
+Robot moving Left
+Station 01: placed item: {id:55000}
+Robot moving Right
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Retrieved item from Pickup: {id:10000}
+Robot moving Forward
+Robot moving Forward
+Robot moving Left
+Station 01: placed item: {id:10000}
+Robot moving Right
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Retrieved item from Pickup: {id:20000}
+Robot moving Forward
+Robot moving Right
+Station 00: placed item: {id:20000}
+Robot moving Left
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Retrieved item from Pickup: {id:30000}
+Robot moving Forward
+Robot moving Forward
+Robot moving Left
+Station 01: placed item: {id:30000}
+Robot moving Right
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Retrieved item from Pickup: {id:40000}
+Robot moving Forward
+Robot moving Right
+Station 00: placed item: {id:40000}
+Robot moving Left
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Retrieved item from Pickup: {id:60000}
+Robot moving Forward
+Robot moving Right
+Station 00: placed item: {id:60000}
+Robot moving Left
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Retrieved item from Pickup: {id:80000}
+Robot moving Forward
+Robot moving Right
+Station 00: placed item: {id:80000}
+Robot moving Left
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Retrieved item from Pickup: {id:90000}
+Robot moving Forward
+Robot moving Forward
+Robot moving Left
+Station 01: placed item: {id:90000}
+Robot moving Right
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Retrieved item from Pickup: {id:01111}
+Robot moving Forward
+Robot moving Right
+Station 00: placed item: {id:01111}
+Robot moving Left
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Retrieved item from Pickup: {id:02222}
+Robot moving Forward
+Robot moving Right
+Station 00: placed item: {id:02222}
+Robot moving Left
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Retrieved item from Pickup: {id:03333}
+Robot moving Forward
+Robot moving Right
+Station 00: unable to palce item
+Robot moving Left
+Robot moving Forward
+Robot moving Forward
+Robot moving Right
+Station 02: placed item: {id:03333}
+Robot moving Left
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Retrieved item from Pickup: {id:04444}
+Robot moving Forward
+Robot moving Right
+Station 00: unable to palce item
+Robot moving Left
+Robot moving Forward
+Robot moving Forward
+Robot moving Right
+Station 02: placed item: {id:04444}
+Robot moving Left
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Retrieved item from Pickup: {id:05555}
+Robot moving Forward
+Robot moving Right
+Station 00: unable to palce item
+Robot moving Left
+Robot moving Forward
+Robot moving Forward
+Robot moving Right
+Station 02: placed item: {id:05555}
+Robot moving Left
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Retrieved item from Pickup: {id:06666}
+Robot moving Forward
+Robot moving Right
+Station 00: unable to palce item
+Robot moving Left
+Robot moving Forward
+Robot moving Forward
+Robot moving Right
+Station 02: placed item: {id:06666}
+Robot moving Left
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Retrieved item from Pickup: {id:07777}
+Robot moving Forward
+Robot moving Right
+Station 00: unable to palce item
+Robot moving Left
+Robot moving Forward
+Robot moving Forward
+Robot moving Right
+Station 02: placed item: {id:07777}
+Robot moving Left
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Retrieved item from Pickup: {id:08888}
+Robot moving Forward
+Robot moving Right
+Station 00: unable to palce item
+Robot moving Left
+Robot moving Forward
+Robot moving Forward
+Robot moving Right
+Station 02: placed item: {id:08888}
+Robot moving Left
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Retrieved item from Pickup: {id:09999}
+Robot moving Forward
+Robot moving Right
+Station 00: unable to palce item
+Robot moving Left
+Robot moving Forward
+Robot moving Forward
+Robot moving Right
+Station 02: placed item: {id:09999}
+Robot moving Left
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Retrieved item from Pickup: {id:12345}
+Robot moving Forward
+Robot moving Forward
+Robot moving Left
+Station 01: placed item: {id:12345}
+Robot moving Right
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Retrieved item from Pickup: {id:54321}
+Robot moving Forward
+Robot moving Forward
+Robot moving Forward
+Robot moving Forward
+Robot moving Forward
+Robot moving Forward
+Robot moving Forward
+Robot moving Forward
+Robot moving Left
+Station 07: placed item: {id:54321}
+Robot moving Right
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Retrieved item from Pickup: {id:44444}
+Robot moving Forward
+Robot moving Right
+Station 00: unable to palce item
+Robot moving Left
+Robot moving Forward
+Robot moving Forward
+Robot moving Right
+Station 02: placed item: {id:44444}
+Robot moving Left
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Retrieved item from Pickup: {id:33333}
+Robot moving Forward
+Robot moving Forward
+Robot moving Left
+Station 01: placed item: {id:33333}
+Robot moving Right
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Retrieved item from Pickup: {id:22222}
+Robot moving Forward
+Robot moving Right
+Station 00: unable to palce item
+Robot moving Left
+Robot moving Forward
+Robot moving Forward
+Robot moving Right
+Station 02: unable to palce item
+Robot moving Left
+Robot moving Forward
+Robot moving Forward
+Robot moving Right
+Station 04: placed item: {id:22222}
+Robot moving Left
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Retrieved item from Pickup: {id:11111}
+Robot moving Forward
+Robot moving Forward
+Robot moving Left
+Station 01: placed item: {id:11111}
+Robot moving Right
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+
+Unload now [y/n]:Unloading
+Robot moving Forward
+Robot moving Forward
+Robot moving Forward
+Robot moving Forward
+Robot moving Forward
+Robot moving Forward
+Robot moving Left
+Retrieved item from Station 05: {id:70000}
+Robot moving Right
+Robot moving Forward
+Robot moving Forward
+Robot moving Forward
+Refrigeration Container: placed item: {id:70000}
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Left
+Retrieved item from Station 05: {id:79999}
+Robot moving Right
+Robot moving Forward
+Robot moving Forward
+Robot moving Forward
+Refrigeration Container: placed item: {id:79999}
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Left
+Retrieved item from Station 05: {id:75000}
+Robot moving Right
+Robot moving Forward
+Robot moving Forward
+Robot moving Forward
+Refrigeration Container: placed item: {id:75000}
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Left
+Unable to retrieve item from Station 05
+Done Unloading
+Robot moving Right
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Robot moving Backward
+Unable to retrieve item from Pickup
