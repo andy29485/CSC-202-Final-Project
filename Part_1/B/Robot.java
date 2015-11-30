@@ -96,9 +96,9 @@ public class Robot {
       System.out.printf("Unable to retrieve item from %s\n",
         this.currentStation.getName());
     else
-      System.out.printf("Retrieved item from %s: {id:%d}\n",
+      System.out.printf("Retrieved item from %s: {id:%s}\n",
         this.currentStation.getName(),
-        this.item.getID());
+        this.item.getStrID());
     return this.item != null;
   }
 
@@ -115,9 +115,9 @@ public class Robot {
       return false;
     }
     if(this.currentStation.addItem(this.item)) {
-      System.out.printf("%s: placed item: {id:%d}\n",
+      System.out.printf("%s: placed item: {id:%s}\n",
         this.currentStation.getName(),
-        this.item.getID());
+        this.item.getStrID());
       this.item = null;
       return true;
     }
