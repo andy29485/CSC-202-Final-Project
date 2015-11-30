@@ -95,13 +95,15 @@ public class Map {
       }
       else {                      //All other items
         if(station_num == -1) {   //  go into the same station as their MSD
-          station_num = item_msd;
+          station_num = item_msd%2;
         }
         else {                   //If that station is full, they go into
           station_num += 2;      //  the next station(perserving even/odd-ness)
         }
         if(station_num >= 8) {//If all even/odd stations are full
-          this.unload(item_msd, 8);//perform emergency dump
+          for(int i=item_msd%2; i<8; i++) {//perform emergency dump
+            this.unload(i, 8);
+          }
           station_num = -3;
         }
       }
