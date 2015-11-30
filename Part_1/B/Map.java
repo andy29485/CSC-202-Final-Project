@@ -95,13 +95,15 @@ public class Map {
       }
       else {                      //All other items
         if(station_num == -1) {   //  go into the same station as their MSD
-          station_num = item_msd;
+          station_num = item_msd%2;
         }
         else {                   //If that station is full, they go into
           station_num += 2;      //  the next station(perserving even/odd-ness)
         }
         if(station_num >= 8) {//If all even/odd stations are full
-          this.unload(item_msd, 8);//perform emergency dump
+          for(int i=item_msd%2; i<8; i++) {//perform emergency dump
+            this.unload(i, 8);
+          }
           station_num = -3;
         }
       }
@@ -135,7 +137,10 @@ public class Map {
     if(from < -2 || from >= this.stations.length
       || to < -2 || to >= this.stations.length)
         throw new ArrayIndexOutOfBoundsException(
-          String.format("valid stations [-2, %d]",this.stations.length-1));
+          String.format("invalid stations: (%d, %d) should be in range [-2, %d]",
+            from,
+            to,
+            this.stations.length-1));
     if(from == to)
       throw new RuntimeException("cannot unload to and from the same station");
 
