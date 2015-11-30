@@ -97,11 +97,11 @@ public class Main {
         String s1 = input.readLine();
         int numItems = Integer.valueOf(s1).intValue();
         for(int i=0; i<numItems; i++){
-        if(storeRoom.canStart())
-            storeRoom.start();
-        else
-	        break;
-      }
+			if(storeRoom.canStart())
+				storeRoom.start();
+			else
+				break;
+		}	
       System.out.print("\nUnload now [y/n]:");
       s1 = input.readLine();
       if(s1.matches("(?i)y.*"))
