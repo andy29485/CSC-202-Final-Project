@@ -6,11 +6,13 @@ public class ItemList {
   private Item head;
   private Item tail;
 
+  //Constructor, sets variables to null values
   public ItemList() {
     this.head = null;
     this.tail = null;
   }
 
+  //Returns the Item at the input index from this ItemList
   public Item get(int index) {
     if(head == null)
       throw new RuntimeException("no elements in list");
@@ -26,6 +28,7 @@ public class ItemList {
     return item;
   }
 
+  //Returns the size of this ItemList
   public int size() {
     if(head == null)
       return 0;
@@ -35,6 +38,7 @@ public class ItemList {
     return length;
   }
 
+  //Appends the input Item to the end of this ItemList
   public Item append(Item item) {
     if(tail == null)
       head = item;
@@ -43,10 +47,12 @@ public class ItemList {
     return tail = item;
   }
 
+  //Appends a new, default item to the end of this ItemList
   public Item append() {
     return this.append(new Item());
   }
 
+  //Inserts the input Item into this ItemList at the input position
   public Item insert(int pos, Item item) {
     Item old;
 
@@ -68,10 +74,12 @@ public class ItemList {
     return item;
   }
 
+  //Inserts a new, default Item into this ItemList at the input position
   public Item insert(int pos) {
     return this.insert(pos, new Item());
   }
 
+  //Removes the Item at the specified index from this ItemList
   public Item remove(int index) {
     if(index >= this.size())
       throw new RuntimeException("no such index: "+index);
@@ -94,7 +102,7 @@ public class ItemList {
     return tmp;
   }
 
-  //not actually pop, just remove and return head item
+  //Similar to, but not the same as, pop, removes and returns the head item
   public Item pop() {
     return this.remove(0);
   }
