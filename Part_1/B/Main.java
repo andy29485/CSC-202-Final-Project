@@ -2,8 +2,8 @@
 //2015-11-19
 //Final Project part 1B
 
-//TO-DO: Edit Anwari grammar (and possibly spelling errors)
-//TO-DO: Figure out what the hell the last sentence means
+
+
 /** Description:
   *   Write a program to simulate the operation of a simple robot. The robot
   *   moves in four directions: forward, backward, right, and left. It's job
