@@ -3,21 +3,23 @@
 //Final Project part 1B
 
 public class Robot {
+  //Creates an Item and Station object for the robot
   private Item item;
   private Station  currentStation;
 
+  //Default constructor, sets objects to null
   public Robot() {
     this.item           = null;
     this.currentStation = null;
   }
 
+  //Alternate constructor, sets currentStation to the input Station
   public Robot(Station station) {
     this.item           = null;
     this.currentStation = station;
   }
 
-  //This method would have been only one line long if not
-  //  for the moving/printing the movements part
+  //Moves the robot to the Station from the argument
   public void moveToStation(Station station) {
     int current_num;
     int end_num;
@@ -81,10 +83,10 @@ public class Robot {
     else if(end_num == -1)
       System.out.println("Robot moving Backward");
 
-    //The only statment needed to actually move the robot
     this.currentStation = station;
   }
 
+  //Calls the getItem method of Station to pick up an item from the station
   public boolean pickItem() {
     if(this.currentStation == null || this.item != null) {
       return false;
@@ -100,6 +102,7 @@ public class Robot {
     return this.item != null;
   }
 
+  //Calls the addItem method of Station and sets the robot's item to null
   public boolean putItem() {
     if(this.currentStation == null || this.item == null) {
       System.out.printf("%s: unable to palce item\n",
@@ -119,14 +122,16 @@ public class Robot {
       return true;
     }
     System.out.printf("%s: unable to palce item\n",
-      this.currentStation.getName());
+    this.currentStation.getName());
     return false;
   }
 
+  //Returns the robot's current Item
   public Item getItem() {
     return this.item;
   }
 
+  //Returns the robot's current Station
   public Station getStation() {
     return this.currentStation;
   }

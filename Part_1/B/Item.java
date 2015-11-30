@@ -39,13 +39,13 @@ public class Item {
     return this.id;
   }
 
-	public String getStrID() {
-		return String.format("%05d", this.id);
-	}
+  public String getStrID() {
+  	return String.format("%05d", this.id);
+  }
 
-	public int getMSD() {
-		return this.getStrID().charAt(0) - '0';
-	}
+  public int getMSD() {
+  	return this.getStrID().charAt(0) - '0';
+  }
 
   public void setTemp(double temp) {
     this.temp = temp;

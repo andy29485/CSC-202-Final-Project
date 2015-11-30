@@ -68,16 +68,19 @@ public class Main {
     //Creates an input reader object
     BufferedReader input
             = new BufferedReader(new InputStreamReader(System.in));
-    String item_info;
+    String input_line;
 
-    while((item_info = input.readLine()).length() > 0) {
+    while((input_line = input.readLine()).length() > 0) {
       Item item = new Item();
-      item.setID(Integer.valueOf(item_info).intValue());
+      String itemdata[] = input_line.split("\\+s");
+      item.setID(Integer.valueOf(itemdata[0]).intValue());
+      item.setMass(Integer.valueOf(itemdata[1]).intValue());
+      item.setTemp(Integer.valueOf(itemdata[2]).intValue());
       storeRoom.addItem(item);
     }
 
     while(storeRoom.canStart()) {
-    	System.out.print("\nHow many items until unload: ");
+      System.out.print("\nHow many items until unload: ");
       String s1 = input.readLine();
       int numItems = Integer.valueOf(s1).intValue();
       for(int i=0; i<numItems; i++){
