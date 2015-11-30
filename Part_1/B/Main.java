@@ -72,7 +72,7 @@ public class Main {
 
     while((input_line = input.readLine()).length() > 0) {
       Item item = new Item();
-      String itemdata[] = input_line.split("\\+s");
+      String itemdata[] = input_line.split("\\s+");
       item.setID(Integer.valueOf(itemdata[0]).intValue());
       item.setMass(Integer.valueOf(itemdata[1]).intValue());
       item.setTemp(Integer.valueOf(itemdata[2]).intValue());
