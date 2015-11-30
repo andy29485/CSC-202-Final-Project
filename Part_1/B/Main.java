@@ -42,7 +42,7 @@
   *   - Station 8, not sure what it is, but it was on the diagram
   *       see next assumption
   *   - If stations are full(in said row)
-  *       dump into station 8
+  *       dump station that item should have been placed in, into station 8
   *       !except station 5! - that goes to Refrigeration Container
   *   - Directions:
   *     - Backward: to pickup station

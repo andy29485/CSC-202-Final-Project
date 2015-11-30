@@ -10,11 +10,12 @@ public class Map {
   private static final int NUM_STATIONS = 9; //should be 1+actual number
                                              //  this way station 0 is included
   public Map() {
-    this.stations = new Station[NUM_STATIONS];
+    this.stations = new Station[NUM_STATIONS]; //Create normal stations
     this.robot    = new Robot(this.pickup); //Robot starts at pickup
-    this.pickup   = new Station();
+    this.pickup   = new Station();//create pickup/refrigeration stations
     this.unload   = new Station();
 
+    //pickup, refrigeration container, and station 8, cand hold infinite items
     this.pickup.setLimit(-1);
     this.unload.setLimit(-1);
     this.stations[8].setLimit(-1);
@@ -124,11 +125,14 @@ public class Map {
   }
 
   public void unload(int from, int to) {
+    //Check for errors
     if(from < -2 || from >= this.stations.length
       || to < -2 || to >= this.stations.length)
         throw new ArrayIndexOutOfBoundsException(
           String.format("valid stations [-2, %d]",this.stations.length-1));
     if(from == to)
+      throw new RuntimeException("cannot unload to and from the same station");
+
     System.out.println("Unloading");
     if(robot.getItem() == null) {
       robot.moveToStation(this.stations[from]);
@@ -136,23 +140,23 @@ public class Map {
     }
     while(robot.getItem() != null) {
       //move to unload station
-      if(to == -2)
+      if(to == -2) // be it refrigeration container
         robot.moveToStation(this.unload);
-      else if(to == -1)
+      else if(to == -1) // pickup
         robot.moveToStation(this.pickup);
-      else
+      else // or just some other station
         robot.moveToStation(this.stations[to]);
 
       //unload the item
       if(!robot.putItem())
         throw new RuntimeException("robot could not unload item");
 
-      //move to station to unlaod(pick) form
-      if(from == -2)
+      //move to station to unload(pick) form
+      if(from == -2) // be it refrigeration container
         robot.moveToStation(this.unload);
-      else if(from == -1)
+      else if(from == -1) // pickup
         robot.moveToStation(this.pickup);
-      else
+      else // or just some other station
         robot.moveToStation(this.stations[from]);
 
       //Pick up an item from said station
