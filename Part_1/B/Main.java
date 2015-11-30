@@ -77,7 +77,6 @@ public class Main {
     }
 
     while(storeRoom.canStart()) {
-      System.out.print("\nHow many items until unload: ");
       String s1 = input.readLine();
       int numItems = Integer.valueOf(s1).intValue();
       for(int i=0; i<numItems; i++){
@@ -89,7 +88,7 @@ public class Main {
       System.out.print("\nUnload now [y/n]:");
       s1 = input.readLine();
       if(s1.matches("(?i)y.*"))
-        storeRoom.unload();  
+        storeRoom.unload();
     }
 
     //Closes stream
