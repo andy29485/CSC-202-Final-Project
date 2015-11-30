@@ -11,9 +11,13 @@ public class Map {
                                              //  this way station 0 is included
   public Map() {
     this.stations = new Station[NUM_STATIONS]; //Create normal stations
-    this.robot    = new Robot(this.pickup); //Robot starts at pickup
     this.pickup   = new Station();//create pickup/refrigeration stations
     this.unload   = new Station();
+    this.robot    = new Robot(this.pickup); //Robot starts at pickup
+
+    for(int i=0; i<NUM_STATIONS; i++) {
+      this.stations[i] = new Station();
+    }
 
     //pickup, refrigeration container, and station 8, cand hold infinite items
     this.pickup.setLimit(-1);
