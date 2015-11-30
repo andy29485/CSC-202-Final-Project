@@ -137,7 +137,10 @@ public class Map {
     if(from < -2 || from >= this.stations.length
       || to < -2 || to >= this.stations.length)
         throw new ArrayIndexOutOfBoundsException(
-          String.format("valid stations [-2, %d]",this.stations.length-1));
+          String.format("invalid stations: (%d, %d) should be in range [-2, %d]",
+            from,
+            to,
+            this.stations.length-1));
     if(from == to)
       throw new RuntimeException("cannot unload to and from the same station");
 
