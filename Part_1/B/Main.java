@@ -77,7 +77,7 @@ public class Main {
     }
 
     while(storeRoom.canStart()) {
-    	System.out.println("\nHow many items until unload?");
+    	System.out.printf("\nHow many items until unload?");
     	String s1 = input.readLine();
     	int numItems = Integer.valueOf(s1).intValue();
     	for(int i=0; i<numItems; i++){
@@ -86,9 +86,9 @@ public class Main {
     		else
     			break;
     	}
-    	System.out.println("\nUnload now?");
+    	System.out.println("\nUnload now(y/n): ");
     	s1 = input.readLine();
-    	if(s1.equalsIgnoreCase("yes") || s1.equalsIgnoreCase("y"))
+    	if(s1.matches("(?i)y.*"))
     		storeRoom.unload();	
     }
 

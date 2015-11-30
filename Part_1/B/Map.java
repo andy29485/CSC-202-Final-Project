@@ -28,7 +28,7 @@ public class Map {
   }
 
   //Main part(so to speak) - will be looped in actual main
-  //This comment reffers to canStart(step 1-2)
+  //This comment refers to canStart(step 1-2)
   //                     and start(steps 3-6)
   //robot should:
   //  1) go to pickup station - if not there
@@ -147,7 +147,7 @@ public class Map {
       if(!robot.putItem())
         throw new RuntimeException("robot could not unload item");
 
-      //move to station to unlaod(pick) form
+      //move to station to unload(pick) form
       if(from == -2)
         robot.moveToStation(this.unload);
       else if(from == -1)
