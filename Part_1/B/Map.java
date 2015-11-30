@@ -29,7 +29,7 @@ public class Map {
   }
 
   //Main part(so to speak) - will be looped in actual main
-  //This comment reffers to canStart(step 1-2)
+  //This comment refers to canStart(step 1-2)
   //                     and start(steps 3-6)
   //robot should:
   //  1) go to pickup station - if not there
@@ -128,7 +128,6 @@ public class Map {
   }
 
   public void unload(int from, int to) {
-    //Check for errors
     if(from < -2 || from >= this.stations.length
       || to < -2 || to >= this.stations.length)
         throw new ArrayIndexOutOfBoundsException(
@@ -154,7 +153,7 @@ public class Map {
       if(!robot.putItem())
         throw new RuntimeException("robot could not unload item");
 
-      //move to station to unload(pick) form
+      //move to station to unload(pick) from
       if(from == -2) // be it refrigeration container
         robot.moveToStation(this.unload);
       else if(from == -1) // pickup
