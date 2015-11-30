@@ -70,7 +70,7 @@ public class Main {
             = new BufferedReader(new InputStreamReader(System.in));
     String item_info;
 
-    while((item_info = input.readLine()) != null) {
+    while((item_info = input.readLine()).length() > 0) {
       Item item = new Item();
       item.setID(Integer.valueOf(item_info).intValue());
       storeRoom.addItem(item);
